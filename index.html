@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="vendor/bootstrap.bundle.min.js" defer></script>
+</head>
+<body id="top">
+  <div class="container py-3">
+    <header class="layout-block mb-3">
+      <h1>HEADER</h1>
+      <nav class="d-flex align-items-center gap-3 flex-wrap" aria-label="Главное меню">
+        <a href="#top">Главная</a>
+        <a href="#gallery">Галерея</a>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Информация</button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#main-content">Советы</a></li>
+            <li><a class="dropdown-item" href="#information">О галерее</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Маленький экран: 1 колонка; средний: 2; большой: 3. -->
+    <div class="row g-3">
+      <div class="col-12 col-md-4 col-lg-3">
+        <section class="layout-block h-100" id="gallery" aria-labelledby="left-title">
+          <h2 id="left-title">LEFT</h2>
+          <p>Фотографии Карпат</p>
+          <div id="photo-slider" class="carousel slide" role="region" aria-label="Фотографии Карпат">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="images/carpathians.jpg" class="d-block w-100" width="800" height="1100" alt="Черногора: район Говерлы и Петроса">
+              </div>
+              <div class="carousel-item">
+                <img src="images/petros.jpg" class="d-block w-100" width="800" height="1100" alt="Петрос зимой, вид с Говерлы">
+              </div>
+              <div class="carousel-item">
+                <img src="images/synevyr.jpg" class="d-block w-100" width="800" height="1100" alt="Озеро Синевир">
+              </div>
+              <div class="carousel-item">
+                <img src="images/strymba.jpg" class="d-block w-100" width="800" height="1100" alt="Гора Стрымба зимой">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#photo-slider" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Предыдущее фото</span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#photo-slider" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Следующее фото</span></button>
+          </div>
+        </section>
+      </div>
+
+      <main class="col-12 col-md-8 col-lg-6" id="main-content">
+        <div class="layout-block h-100">
+          <h2>MAIN</h2>
+          <p>Советы для путешествий</p>
+          <div class="accordion" id="travel-guide">
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#route" aria-expanded="true" aria-controls="route">Как выбрать маршрут?</button>
+              </h3>
+              <div id="route" class="accordion-collapse collapse show" data-bs-parent="#travel-guide">
+                <div class="accordion-body">Выберите место, которое хотите посетить. Проверьте расстояние, транспорт и прогноз погоды</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bag" aria-expanded="false" aria-controls="bag">Что взять с собой?</button>
+              </h3>
+              <div id="bag" class="accordion-collapse collapse" data-bs-parent="#travel-guide">
+                <div class="accordion-body">Возьмите воду, перекус, документы, заряженный телефон и удобную одежду</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#time" aria-expanded="false" aria-controls="time">Как спланировать время?</button>
+              </h3>
+              <div id="time" class="accordion-collapse collapse" data-bs-parent="#travel-guide">
+                <div class="accordion-body">Предусмотрите время на дорогу, прогулку и отдых. Не планируйте слишком много остановок на один день</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <div class="col-12 col-lg-3">
+        <section class="layout-block h-100" id="information" aria-labelledby="right-title">
+          <h2 id="right-title">RIGHT</h2>
+          <p>Фотки с Карпат.</p>
+          <p>В галерее горные пейзажи Черногоры, Петрос, озеро Синевир и гора Стрымба</p>
+          <h3 class="h5 mt-4">Обратная связь</h3>
+          <form action="#form-result" method="get">
+            <div class="mb-3">
+              <label class="form-label" for="visitor-name">Имя</label>
+              <input class="form-control" id="visitor-name" type="text" autocomplete="given-name" maxlength="60" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="visitor-email">Email</label>
+              <input class="form-control" id="visitor-email" type="email" autocomplete="email" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="message-topic">Тема</label>
+              <input class="form-control" id="message-topic" type="text" maxlength="100" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="favorite-photo">Любимое фото</label>
+              <select class="form-select" id="favorite-photo" required>
+                <option value="" selected disabled>Выберите фотографию</option>
+                <option value="chornohora">Черногора</option>
+                <option value="petros">Петрос</option>
+                <option value="synevyr">Синевир</option>
+                <option value="strymba">Стрымба</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="visitor-message">Сообщение</label>
+              <textarea class="form-control" id="visitor-message" rows="3" maxlength="1000" required></textarea>
+            </div>
+            <div class="d-flex gap-2 flex-wrap">
+              <button class="btn btn-primary" type="submit">Готово</button>
+              <button class="btn btn-secondary" type="reset">Очистить</button>
+            </div>
+            <p class="small mt-3">Учебная форма. Все поля обязательны. Данные не отправляются и не сохраняются.</p>
+          </form>
+          <p id="form-result" class="form-result">Форма заполнена. Это демонстрация без отправки данных.</p>
+        </section>
+      </div>
+    </div>
+
+    <footer class="layout-block mt-3">
+      <h2>FOOTER</h2>
+      <a href="#top">Наверх</a>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+body {
+  background-color: #fff;
+  color: #222;
+}
+
+.layout-block {
+  padding: 20px;
+  background-color: #eee;
+  border: 1px solid #999;
+}
+
+h1, h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.carousel-item img {
+  aspect-ratio: 8 / 11;
+  object-fit: cover;
+  height: auto;
+}
+
+
+.form-result {
+  display: none;
+  margin-top: 16px;
+  padding: 12px;
+  background-color: #d1e7dd;
+}
+
+.form-result:target {
+  display: block;
+}
